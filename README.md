@@ -1,6 +1,11 @@
-# Welcome to Streamlit!
+import github
+from github import Github
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire. :heart:
+# Autentique-se usando uma token de acesso pessoal ou as credenciais do GitHub
+g = Github("sua_token_de_acesso_pessoal_aqui")
 
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
+# Acesse informações do usuário conectado
+user = g.get_user()
+print("Nome do usuário:", user.name)
+print("Avatar do usuário:", user.avatar_url)
+print("Número de repositórios públicos:", user.public_repos)
